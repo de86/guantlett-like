@@ -1,0 +1,15 @@
+[gd_scene load_steps=3 format=3 uid="uid://cbo8gpejuqp3w"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_bml33"]
+albedo_color = Color(0.87994975, 0.38733384, 0.15190351, 1)
+
+[sub_resource type="SphereMesh" id="SphereMesh_phgm7"]
+material = SubResource("StandardMaterial3D_bml33")
+radius = 0.1
+height = 0.2
+radial_segments = 32
+rings = 16
+
+[node name="OrangeBall" type="MeshInstance3D"]
+mesh = SubResource("SphereMesh_phgm7")
+skeleton = NodePath("../..")

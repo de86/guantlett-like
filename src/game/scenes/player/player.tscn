@@ -1,0 +1,53 @@
+[gd_scene load_steps=8 format=3 uid="uid://c7kyapujc4yfq"]
+
+[ext_resource type="Script" uid="uid://bobb7x38r5wut" path="res://src/game/scenes/player/player.gd" id="1_e3ulo"]
+[ext_resource type="PackedScene" uid="uid://ca6amd7roqtgp" path="res://src/game/scenes/characters/orc_visual.tscn" id="2_e3ulo"]
+[ext_resource type="Resource" uid="uid://plk44l88djx" path="res://src/game/data/projectiles/default_projectile_res.tres" id="2_t513h"]
+[ext_resource type="Script" uid="uid://bkppgsatscwde" path="res://src/game/scenes/player/spawner.gd" id="3_mnai8"]
+[ext_resource type="Script" uid="uid://dudwk2sg8fkhl" path="res://src/core/components/health/statpool.gd" id="5_glakq"]
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_e3ulo"]
+radius = 0.18554688
+height = 0.63848877
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_t513h"]
+radius = 0.19384766
+height = 0.63848877
+
+[node name="Player" type="CharacterBody3D" groups=["player"]]
+collision_mask = 36
+script = ExtResource("1_e3ulo")
+_equipped_spell_def = ExtResource("2_t513h")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.32406616, 0)
+shape = SubResource("CapsuleShape3D_e3ulo")
+
+[node name="Model" parent="." instance=ExtResource("2_e3ulo")]
+unique_name_in_owner = true
+transform = Transform3D(-1, 0, 8.742278e-08, 0, 1, 0, -8.742278e-08, 0, -1, 0, 0, 0)
+
+[node name="Spell" type="Node3D" parent="."]
+
+[node name="ProjectileSpawner" type="Node3D" parent="Spell"]
+unique_name_in_owner = true
+script = ExtResource("3_mnai8")
+pool_name = &"projectile"
+
+[node name="ProjectileSpawnPoint" type="Node3D" parent="Spell"]
+unique_name_in_owner = true
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.28729248, -0.3321228)
+
+[node name="Hurtbox" type="Area3D" parent="."]
+unique_name_in_owner = true
+collision_mask = 2
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Hurtbox"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.324, 0)
+shape = SubResource("CapsuleShape3D_t513h")
+
+[node name="HealthPool" type="Node" parent="."]
+unique_name_in_owner = true
+script = ExtResource("5_glakq")
+_max_statpool_value = 5
+metadata/_custom_type_script = "uid://dudwk2sg8fkhl"

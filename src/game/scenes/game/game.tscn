@@ -1,0 +1,50 @@
+[gd_scene load_steps=9 format=3 uid="uid://cdsb3e6etyxex"]
+
+[ext_resource type="Script" uid="uid://c8au0m6ykqy2o" path="res://src/game/scenes/game/game.gd" id="1_75q6j"]
+[ext_resource type="PackedScene" uid="uid://ew850dufgpkt" path="res://src/game/ui/game_ui/game_ui.tscn" id="2_4aahy"]
+[ext_resource type="PackedScene" uid="uid://cuhek0dq4qpnp" path="res://src/game/scenes/dev_levels/dev_level.tscn" id="2_iwm74"]
+[ext_resource type="PackedScene" uid="uid://h8g8qbbpjndx" path="res://src/game/scenes/ui/debug/debug_ui.tscn" id="3_gi6lb"]
+
+[sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_iwm74"]
+sky_horizon_color = Color(0.66224277, 0.6717428, 0.6867428, 1)
+ground_horizon_color = Color(0.66224277, 0.6717428, 0.6867428, 1)
+
+[sub_resource type="Sky" id="Sky_4aahy"]
+sky_material = SubResource("ProceduralSkyMaterial_iwm74")
+
+[sub_resource type="Environment" id="Environment_gi6lb"]
+background_mode = 2
+sky = SubResource("Sky_4aahy")
+tonemap_mode = 2
+
+[sub_resource type="CameraAttributesPractical" id="CameraAttributesPractical_yabyl"]
+
+[node name="Game" type="Node3D"]
+script = ExtResource("1_75q6j")
+
+[node name="GameUI" parent="." instance=ExtResource("2_4aahy")]
+
+[node name="DebugUI" parent="." instance=ExtResource("3_gi6lb")]
+
+[node name="World" type="Node3D" parent="."]
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="World"]
+transform = Transform3D(-0.6427624, 0.013708965, 0.76594293, 0.5803934, 0.6612957, 0.4752173, -0.50000006, 0.75, -0.43301266, 0, 0, 0)
+light_color = Color(0.42491603, 0.52063483, 0.90622675, 1)
+light_energy = 0.2
+light_specular = 0.5
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="World"]
+environment = SubResource("Environment_gi6lb")
+
+[node name="Camera3D" type="Camera3D" parent="World"]
+transform = Transform3D(1, 0, 0, 0, 0.7241719, 0.68961954, 0, -0.68961954, 0.7241719, 0, 3.518, 3.687)
+attributes = SubResource("CameraAttributesPractical_yabyl")
+projection = 1
+fov = 37.849285
+size = 6.1
+
+[node name="DevLevel" parent="World" instance=ExtResource("2_iwm74")]
+
+[node name="Pools" type="Node3D" parent="World"]
+unique_name_in_owner = true

@@ -1,0 +1,7 @@
+[gd_resource type="Resource" script_class="ActionDefSmallKeyOnPickup" load_steps=2 format=3 uid="uid://dkntpfg8gpsow"]
+
+[ext_resource type="Script" uid="uid://dapaw551iw4tb" path="res://src/game/data/items/small_key/action_def_small_key_on_pickup.gd" id="1_j6umi"]
+
+[resource]
+script = ExtResource("1_j6umi")
+metadata/_custom_type_script = "uid://dapaw551iw4tb"

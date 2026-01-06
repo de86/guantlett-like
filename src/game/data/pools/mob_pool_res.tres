@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="PoolDef" load_steps=3 format=3 uid="uid://6qbxwtn7ok3e"]
+
+[ext_resource type="Script" uid="uid://dau1d7uhak23k" path="res://src/core/data/pool_def.gd" id="1_3ntnq"]
+[ext_resource type="PackedScene" uid="uid://qs8a0ukoykpy" path="res://src/core/scenes/mobs/simple_mob/simple_mob.tscn" id="1_nkbl1"]
+
+[resource]
+script = ExtResource("1_3ntnq")
+pool_identifier = &"mob"
+poolable_scene = ExtResource("1_nkbl1")
+recycle_strategy = null
+metadata/_custom_type_script = "uid://dau1d7uhak23k"

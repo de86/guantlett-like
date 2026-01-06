@@ -1,0 +1,118 @@
+[gd_scene load_steps=5 format=3 uid="uid://cxrejybrwol5o"]
+
+[ext_resource type="Script" uid="uid://cro2n8j8wfcqw" path="res://src/game/scenes/ui/main_menu/main_menu.gd" id="1_ful4p"]
+[ext_resource type="Theme" uid="uid://dhakf053cqgnk" path="res://assets/themes/default_ui_theme.tres" id="1_gn1n2"]
+[ext_resource type="Script" uid="uid://c516iqaf3q7tp" path="res://src/game/scenes/ui/main_menu/settings_menu_controller.gd" id="3_5j0pi"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_py6cy"]
+bg_color = Color(0.02745098, 0.02745098, 0.02745098, 1)
+
+[node name="MainMenu" type="CanvasLayer"]
+script = ExtResource("1_ful4p")
+
+[node name="Control" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Background" type="Panel" parent="Control"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_py6cy")
+
+[node name="Menu" type="CenterContainer" parent="Control/Background"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Control/Background/Menu"]
+layout_mode = 2
+
+[node name="StartButton" type="Button" parent="Control/Background/Menu/VBoxContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+theme = ExtResource("1_gn1n2")
+theme_override_font_sizes/font_size = 40
+text = "Start"
+
+[node name="SettingsButton" type="Button" parent="Control/Background/Menu/VBoxContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+theme = ExtResource("1_gn1n2")
+theme_override_font_sizes/font_size = 40
+text = "Settings"
+
+[node name="QuitButton" type="Button" parent="Control/Background/Menu/VBoxContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+theme = ExtResource("1_gn1n2")
+theme_override_font_sizes/font_size = 40
+text = "Quit"
+
+[node name="Settings" type="CenterContainer" parent="Control/Background"]
+visible = false
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("3_5j0pi")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Control/Background/Settings"]
+layout_mode = 2
+
+[node name="MusicVolume" type="HBoxContainer" parent="Control/Background/Settings/VBoxContainer"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="Control/Background/Settings/VBoxContainer/MusicVolume"]
+layout_mode = 2
+theme = ExtResource("1_gn1n2")
+theme_override_font_sizes/font_size = 40
+text = "Music Volume"
+
+[node name="CenterContainer" type="CenterContainer" parent="Control/Background/Settings/VBoxContainer/MusicVolume"]
+layout_mode = 2
+
+[node name="MusicVolumeSlider" type="HSlider" parent="Control/Background/Settings/VBoxContainer/MusicVolume/CenterContainer"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(250, 0)
+layout_mode = 2
+max_value = 10.0
+
+[node name="SFXVolume" type="HBoxContainer" parent="Control/Background/Settings/VBoxContainer"]
+layout_mode = 2
+
+[node name="Label2" type="Label" parent="Control/Background/Settings/VBoxContainer/SFXVolume"]
+layout_mode = 2
+theme = ExtResource("1_gn1n2")
+theme_override_font_sizes/font_size = 40
+text = "SFX Volume"
+
+[node name="CenterContainer" type="CenterContainer" parent="Control/Background/Settings/VBoxContainer/SFXVolume"]
+layout_mode = 2
+
+[node name="SFXVolumeSlider" type="HSlider" parent="Control/Background/Settings/VBoxContainer/SFXVolume/CenterContainer"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(250, 0)
+layout_mode = 2
+max_value = 10.0
+
+[node name="CenterContainer" type="CenterContainer" parent="Control/Background/Settings/VBoxContainer"]
+layout_mode = 2
+
+[node name="Button" type="Button" parent="Control/Background/Settings/VBoxContainer/CenterContainer"]
+layout_mode = 2
+theme = ExtResource("1_gn1n2")
+theme_override_font_sizes/font_size = 40
+text = "Back"

@@ -1,0 +1,22 @@
+[gd_scene load_steps=3 format=3 uid="uid://bhfl4q2jrgy8h"]
+
+[ext_resource type="Script" uid="uid://b3y5j68lpwq6b" path="res://src/game/scenes/item_pickup/item_pickup.gd" id="1_8nc2t"]
+
+[sub_resource type="CylinderShape3D" id="CylinderShape3D_8nc2t"]
+height = 0.5708008
+radius = 0.25830078
+
+[node name="ItemPickup" type="Node3D"]
+script = ExtResource("1_8nc2t")
+
+[node name="VisualRoot" type="Node3D" parent="."]
+unique_name_in_owner = true
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.3, 0.20025635)
+
+[node name="Area3D" type="Area3D" parent="."]
+unique_name_in_owner = true
+collision_layer = 8
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.2854004, 0)
+shape = SubResource("CylinderShape3D_8nc2t")

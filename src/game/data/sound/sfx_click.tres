@@ -1,0 +1,14 @@
+[gd_resource type="Resource" script_class="SoundDef" load_steps=3 format=3 uid="uid://cbfvcof3ndhys"]
+
+[ext_resource type="Script" uid="uid://8os6pqpu1wyh" path="res://src/core/data/sound_def.gd" id="1_hunge"]
+[ext_resource type="AudioStream" uid="uid://cqmecpy1174rx" path="res://assets/sfx/confirmation_001.ogg" id="1_uy3de"]
+
+[resource]
+script = ExtResource("1_hunge")
+audio_stream = ExtResource("1_uy3de")
+name = &"orange_click"
+bus = &"SFX"
+volume_jitter = 0.1
+pitch_jitter = 0.5
+max_polyphony = 4
+metadata/_custom_type_script = "uid://8os6pqpu1wyh"

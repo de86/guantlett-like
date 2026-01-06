@@ -1,0 +1,48 @@
+[gd_scene load_steps=4 format=3 uid="uid://ew850dufgpkt"]
+
+[ext_resource type="Script" uid="uid://dcu4orgfpdkva" path="res://src/game/ui/game_ui/game_ui_controller.gd" id="1_4e86b"]
+[ext_resource type="PackedScene" uid="uid://c2j7k1f1roywi" path="res://src/core/ui/icon_meter/icon_meter.tscn" id="2_4e86b"]
+[ext_resource type="PackedScene" uid="uid://csw132efechqx" path="res://src/core/ui/icon_with_count/icon_with_count.tscn" id="2_fialp"]
+
+[node name="GameUI" type="CanvasLayer"]
+script = ExtResource("1_4e86b")
+
+[node name="Control" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="MarginContainer" type="MarginContainer" parent="Control"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_right = 24.0
+offset_bottom = 24.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 20
+theme_override_constants/margin_top = 20
+theme_override_constants/margin_right = 20
+theme_override_constants/margin_bottom = 20
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Control/MarginContainer"]
+layout_mode = 2
+
+[node name="Control" type="Control" parent="Control/MarginContainer/VBoxContainer"]
+layout_mode = 2
+
+[node name="HeartMeter" parent="Control/MarginContainer/VBoxContainer" instance=ExtResource("2_4e86b")]
+unique_name_in_owner = true
+layout_mode = 2
+
+[node name="HBoxContainer" type="HBoxContainer" parent="Control/MarginContainer/VBoxContainer"]
+layout_mode = 2
+
+[node name="KeyCount" parent="Control/MarginContainer/VBoxContainer/HBoxContainer" instance=ExtResource("2_fialp")]
+unique_name_in_owner = true
+layout_mode = 2
+_margin_between = 10

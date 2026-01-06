@@ -1,0 +1,7 @@
+[gd_scene load_steps=2 format=3 uid="uid://ciel8julxthpx"]
+
+[ext_resource type="Script" uid="uid://bkppgsatscwde" path="res://src/game/scenes/player/spawner.gd" id="1_wtxmy"]
+
+[node name="Spawner" type="Node3D"]
+script = ExtResource("1_wtxmy")
+pool_name = &""

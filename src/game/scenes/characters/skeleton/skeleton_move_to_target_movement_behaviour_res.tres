@@ -1,0 +1,8 @@
+[gd_resource type="Resource" script_class="MoveToTargetMovementBehaviourDef" load_steps=2 format=3 uid="uid://cwe6x6f08dvl8"]
+
+[ext_resource type="Script" uid="uid://c0jd5j1rqjbsd" path="res://src/core/scripts/behaviours/movement_behaviours/move_to_target_movement_behaviour.gd" id="1_vjq6j"]
+
+[resource]
+script = ExtResource("1_vjq6j")
+_move_speed = 2.0
+metadata/_custom_type_script = "uid://c0jd5j1rqjbsd"

@@ -1,0 +1,14 @@
+[gd_scene load_steps=2 format=3 uid="uid://wa32nukf0imn"]
+
+[ext_resource type="PackedScene" uid="uid://b5nqn3xjay1xi" path="res://assets/vendor/models/kenney_graveyard-kit_5_0/character-ghost.glb" id="1_wfs4w"]
+
+[node name="character-ghost2" instance=ExtResource("1_wfs4w")]
+
+[node name="character-ghost" parent="." index="0"]
+transform = Transform3D(-1, 0, 8.742278e-08, 0, 1, 0, -8.742278e-08, 0, -1, 0, 0, 0)
+
+[node name="arm-right" parent="character-ghost/root/torso" index="0"]
+transform = Transform3D(0.70710677, -0.70710677, 0, 0.70710677, 0.70710677, 0, 0, 0, 1, -0.125, 0.15, 0.0024999976)
+
+[node name="arm-left" parent="character-ghost/root/torso" index="1"]
+transform = Transform3D(0.70710677, 0.70710677, 0, -0.70710677, 0.70710677, 0, 0, 0, 1, 0.125, 0.15, 0.0024999976)

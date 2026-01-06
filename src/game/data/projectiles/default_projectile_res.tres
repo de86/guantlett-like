@@ -1,0 +1,16 @@
+[gd_resource type="Resource" script_class="ProjectileDef" load_steps=4 format=3 uid="uid://plk44l88djx"]
+
+[ext_resource type="Script" uid="uid://b43sxxae3m3b0" path="res://src/core/data/projectile_def.gd" id="1_1om47"]
+[ext_resource type="PackedScene" uid="uid://cbo8gpejuqp3w" path="res://src/game/scenes/projectile_visuals/orange_ball.tscn" id="2_1j8gh"]
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_ty88g"]
+radius = 0.096
+
+[resource]
+script = ExtResource("1_1om47")
+type = &"default"
+speed = 3.0
+visual = ExtResource("2_1j8gh")
+collision_shape = SubResource("SphereShape3D_ty88g")
+lifetime_in_seconds = 5
+metadata/_custom_type_script = "uid://b43sxxae3m3b0"

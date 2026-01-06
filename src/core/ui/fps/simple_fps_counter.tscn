@@ -1,0 +1,8 @@
+[gd_scene load_steps=2 format=3 uid="uid://dguph5v0l2ncc"]
+
+[ext_resource type="Script" uid="uid://cs3dsx0bnap6s" path="res://src/core/ui/fps/simple_fps_counter.gd" id="1_bd18j"]
+
+[node name="SimpleFPSCounter" type="Label"]
+theme_override_font_sizes/font_size = 26
+text = "FPS: "
+script = ExtResource("1_bd18j")

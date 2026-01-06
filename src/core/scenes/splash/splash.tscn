@@ -1,0 +1,44 @@
+[gd_scene load_steps=4 format=3 uid="uid://drke5ckghgwmi"]
+
+[ext_resource type="Script" uid="uid://cvhrdp2xir3dd" path="res://src/core/scenes/splash/splash.gd" id="1_fufio"]
+[ext_resource type="Texture2D" uid="uid://e8f7tcowq7hd" path="res://assets/sprites/incendis-skull-gradient-placeholder.png" id="2_fufio"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_kkvs4"]
+bg_color = Color(0.025526, 0.025526, 0.025526, 1)
+
+[node name="Splash" type="CanvasLayer"]
+script = ExtResource("1_fufio")
+fade_in_over_seconds = 1.8
+fade_out_over_seconds = 0.5
+
+[node name="Control" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Panel" type="Panel" parent="Control"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_kkvs4")
+
+[node name="CenterContainer" type="CenterContainer" parent="Control/Panel"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="TextureRect" type="TextureRect" parent="Control/Panel/CenterContainer"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(700, 700)
+layout_mode = 2
+texture = ExtResource("2_fufio")
+expand_mode = 2

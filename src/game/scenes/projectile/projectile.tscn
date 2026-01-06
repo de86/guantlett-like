@@ -1,0 +1,28 @@
+[gd_scene load_steps=4 format=3 uid="uid://c02uj66lsruu6"]
+
+[ext_resource type="Script" uid="uid://4abavr6cchom" path="res://src/core/scripts/projectile.gd" id="1_phgm7"]
+[ext_resource type="PackedScene" uid="uid://cbo8gpejuqp3w" path="res://src/game/scenes/projectile_visuals/orange_ball.tscn" id="2_y823l"]
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_phgm7"]
+radius = 0.09626415
+
+[node name="Projectile" type="Node3D" groups=["projectiles"]]
+script = ExtResource("1_phgm7")
+
+[node name="VisualRoot" type="Node3D" parent="."]
+unique_name_in_owner = true
+
+[node name="OrangeBall" parent="VisualRoot" instance=ExtResource("2_y823l")]
+
+[node name="Area3D" type="Area3D" parent="."]
+unique_name_in_owner = true
+collision_layer = 16
+collision_mask = 6
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D"]
+unique_name_in_owner = true
+shape = SubResource("SphereShape3D_phgm7")
+
+[node name="LifetimeTimer" type="Timer" parent="."]
+unique_name_in_owner = true
+one_shot = true

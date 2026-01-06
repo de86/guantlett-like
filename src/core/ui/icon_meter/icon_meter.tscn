@@ -1,0 +1,14 @@
+[gd_scene load_steps=3 format=3 uid="uid://c2j7k1f1roywi"]
+
+[ext_resource type="Texture2D" uid="uid://dkxw3gly3e4y8" path="res://assets/sprites/suit_hearts.png" id="1_dth8f"]
+[ext_resource type="Script" uid="uid://cmg4m48gseckh" path="res://src/core/ui/icon_meter/icon_meter_controller.gd" id="1_n08mi"]
+
+[node name="IconMeter" type="HBoxContainer"]
+custom_minimum_size = Vector2(0, 60)
+script = ExtResource("1_n08mi")
+_icon = ExtResource("1_dth8f")
+
+[node name="TextureRect" type="TextureRect" parent="."]
+layout_mode = 2
+texture = ExtResource("1_dth8f")
+expand_mode = 2

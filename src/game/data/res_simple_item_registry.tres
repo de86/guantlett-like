@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="SimpleItemRegistryDef" load_steps=5 format=3 uid="uid://duankenmrem5t"]
+
+[ext_resource type="Script" uid="uid://efx7g4cirmr4" path="res://src/core/data/simple_item_registry_def.gd" id="1_s76d2"]
+[ext_resource type="Script" uid="uid://nyldpvcc1iuk" path="res://src/core/data/simple_item_def.gd" id="2_s76d2"]
+[ext_resource type="Resource" uid="uid://kpsd40p5bk3q" path="res://src/game/data/items/large_key/res_item_large_key.tres" id="3_mdoum"]
+[ext_resource type="Resource" uid="uid://6eddb4iprecu" path="res://src/game/data/items/small_key/res_item_small_key.tres" id="3_s76d2"]
+
+[resource]
+script = ExtResource("1_s76d2")
+simple_items = Array[ExtResource("2_s76d2")]([ExtResource("3_mdoum"), ExtResource("3_s76d2")])
+metadata/_custom_type_script = "uid://efx7g4cirmr4"

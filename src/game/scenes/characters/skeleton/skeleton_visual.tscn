@@ -1,0 +1,15 @@
+[gd_scene load_steps=2 format=3 uid="uid://ciiypo7ui201j"]
+
+[ext_resource type="PackedScene" uid="uid://d2jvynrcijdy3" path="res://assets/vendor/models/kenney_graveyard-kit_5_0/character-skeleton.glb" id="1_dkbji"]
+
+[node name="character-skeleton2" instance=ExtResource("1_dkbji")]
+transform = Transform3D(1, 0, -1.7484555e-07, 0, 1, 0, 1.7484555e-07, 0, 1, 0, 0, 0)
+
+[node name="character-skeleton" parent="." index="0"]
+transform = Transform3D(-1, 0, 8.742276e-08, 0, 1, 0, -8.742276e-08, 0, -1, 0, 0, 0)
+
+[node name="arm-right" parent="character-skeleton/root/torso" index="1"]
+transform = Transform3D(0.70710677, -0.70710677, 0, 0.70710677, 0.70710677, 0, 0, 0, 1, -0.125, 0.17, 0.0024999976)
+
+[node name="arm-left" parent="character-skeleton/root/torso" index="2"]
+transform = Transform3D(0.7071067, 0.7071068, 0, -0.7071068, 0.7071067, 0, 0, 0, 1, 0.125, 0.17, 0.0024999976)

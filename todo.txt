@@ -1,0 +1,9 @@
+## Need
+- Points
+- Sounds
+- Music
+
+## Polish
+- Enemy Knockback on hit
+- Animations
+- UI

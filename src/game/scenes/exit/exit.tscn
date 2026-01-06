@@ -1,0 +1,92 @@
+[gd_scene load_steps=8 format=3 uid="uid://dnymks7kh7nmq"]
+
+[ext_resource type="Script" uid="uid://bfafufesu5on8" path="res://src/game/scenes/exit/exit.gd" id="1_8p52y"]
+[ext_resource type="PackedScene" uid="uid://b04a01u01ks1s" path="res://assets/vendor/models/kenney_mini_dungeon/GLB format/stairs.glb" id="1_qx0f4"]
+[ext_resource type="PackedScene" uid="uid://p4mhnm0wu4rc" path="res://assets/vendor/models/kenney_mini_dungeon/GLB format/dirt.glb" id="2_8p52y"]
+[ext_resource type="PackedScene" uid="uid://cxl8pnwwr40wt" path="res://assets/vendor/models/kenneys_platformer-kit/lock.glb" id="4_ayfnx"]
+[ext_resource type="PackedScene" uid="uid://y515fsbvfxgx" path="res://assets/vendor/models/kenneys_fantasy-town-kit_2_0/planks.glb" id="5_3ovjk"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_ayfnx"]
+size = Vector3(0.5, 0.5, 0.5)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_3ovjk"]
+size = Vector3(1.2, 0.5, 1.2)
+
+[node name="Exit" type="Node3D"]
+script = ExtResource("1_8p52y")
+
+[node name="Model" type="Node3D" parent="."]
+
+[node name="stairs2" parent="Model" instance=ExtResource("1_qx0f4")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.9059214, -0.2484436)
+
+[node name="stairs3" parent="Model" instance=ExtResource("1_qx0f4")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1.807332, 0.67155874)
+
+[node name="dirt4" parent="Model" instance=ExtResource("2_8p52y")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1, -0.90692145, 0)
+
+[node name="dirt7" parent="Model" instance=ExtResource("2_8p52y")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1, -0.90692145, -1)
+
+[node name="dirt15" parent="Model" instance=ExtResource("2_8p52y")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1, -0.90692145, -1)
+
+[node name="dirt5" parent="Model" instance=ExtResource("2_8p52y")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1, -0.90692145, 1)
+
+[node name="dirt6" parent="Model" instance=ExtResource("2_8p52y")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1, -0.90692145, 2)
+
+[node name="dirt11" parent="Model" instance=ExtResource("2_8p52y")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1.8074245, 1.5161507)
+
+[node name="dirt14" parent="Model" instance=ExtResource("2_8p52y")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.90692145, 1.5162058)
+
+[node name="dirt12" parent="Model" instance=ExtResource("2_8p52y")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1, -1.8074245, 1)
+
+[node name="dirt13" parent="Model" instance=ExtResource("2_8p52y")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1, -1.8074245, 1)
+
+[node name="dirt16" parent="Model" instance=ExtResource("2_8p52y")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1, -1.8074245, 0)
+
+[node name="dirt17" parent="Model" instance=ExtResource("2_8p52y")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1, -1.8074245, 0)
+
+[node name="dirt8" parent="Model" instance=ExtResource("2_8p52y")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1, -0.90692145, 2)
+
+[node name="dirt9" parent="Model" instance=ExtResource("2_8p52y")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1, -0.90692145, 1)
+
+[node name="dirt10" parent="Model" instance=ExtResource("2_8p52y")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1, -0.90692145, 0)
+
+[node name="TrapDoor" type="Node3D" parent="Model"]
+unique_name_in_owner = true
+
+[node name="lock2" parent="Model/TrapDoor" instance=ExtResource("4_ayfnx")]
+transform = Transform3D(-3.8853184e-08, 0.45818424, 0.88885736, 2.002787e-08, 0.88885736, -0.45818424, -1, 0, -4.371139e-08, -0.32019043, 0.06945801, 0.0047311783)
+
+[node name="planks2" parent="Model/TrapDoor" instance=ExtResource("5_3ovjk")]
+
+[node name="ExitTrigger" type="Area3D" parent="."]
+unique_name_in_owner = true
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -0.031707764)
+collision_layer = 32
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="ExitTrigger"]
+shape = SubResource("BoxShape3D_ayfnx")
+
+[node name="KeyCheckTrigger" type="Area3D" parent="."]
+unique_name_in_owner = true
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -0.031707764)
+collision_layer = 32
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="KeyCheckTrigger"]
+shape = SubResource("BoxShape3D_3ovjk")
+
+[connection signal="body_entered" from="KeyCheckTrigger" to="." method="_on_exit_trigger_body_entered"]

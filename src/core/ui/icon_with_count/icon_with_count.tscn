@@ -1,0 +1,38 @@
+[gd_scene load_steps=3 format=3 uid="uid://csw132efechqx"]
+
+[ext_resource type="Script" uid="uid://dnnk21uwlllx5" path="res://src/core/ui/icon_with_count/icon_with_count.gd" id="1_cdfhs"]
+[ext_resource type="Texture2D" uid="uid://d2f5fba813hnu" path="res://assets/sprites/key.png" id="1_tcvt8"]
+
+[node name="IconWithCount" type="HBoxContainer"]
+script = ExtResource("1_cdfhs")
+_icon = ExtResource("1_tcvt8")
+
+[node name="TextureRectMarginContainer" type="MarginContainer" parent="."]
+unique_name_in_owner = true
+layout_mode = 2
+theme_override_constants/margin_left = 10
+theme_override_constants/margin_top = 10
+theme_override_constants/margin_right = 5
+theme_override_constants/margin_bottom = 10
+
+[node name="TextureRect" type="TextureRect" parent="TextureRectMarginContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+texture = ExtResource("1_tcvt8")
+
+[node name="LabelMarginContainer" type="MarginContainer" parent="."]
+unique_name_in_owner = true
+layout_mode = 2
+theme_override_constants/margin_left = 5
+theme_override_constants/margin_top = 10
+theme_override_constants/margin_right = 10
+theme_override_constants/margin_bottom = 10
+
+[node name="Label" type="Label" parent="LabelMarginContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+theme_override_font_sizes/font_size = 32
+text = "0"
+horizontal_alignment = 1
+vertical_alignment = 1
+justification_flags = 0

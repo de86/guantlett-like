@@ -1,0 +1,14 @@
+[gd_resource type="Resource" script_class="SimpleItemDef" load_steps=4 format=3 uid="uid://kpsd40p5bk3q"]
+
+[ext_resource type="Resource" uid="uid://dkntpfg8gpsow" path="res://src/game/data/items/small_key/action_res_small_key_on_pickup.tres" id="1_avoux"]
+[ext_resource type="Script" uid="uid://nyldpvcc1iuk" path="res://src/core/data/simple_item_def.gd" id="2_j24um"]
+[ext_resource type="PackedScene" uid="uid://ioa5n2v3ios3" path="res://src/game/scenes/keys/large_key/large_key.tscn" id="3_4eswo"]
+
+[resource]
+script = ExtResource("2_j24um")
+id = &"large_key"
+display_name = "Large Key"
+description = "A large key. It's hefty enough to open a large lock"
+visual = ExtResource("3_4eswo")
+onPickUpAction = ExtResource("1_avoux")
+metadata/_custom_type_script = "uid://nyldpvcc1iuk"

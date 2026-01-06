@@ -1,0 +1,18 @@
+[gd_scene load_steps=3 format=3 uid="uid://bwe3omq2dxcm6"]
+
+[ext_resource type="PackedScene" uid="uid://cyiogqp0utb4l" path="res://assets/vendor/models/kenney_mini_dungeon/GLB format/wall-half.glb" id="1_686a0"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_r3em5"]
+
+[node name="Wall" type="Node3D"]
+
+[node name="Model" type="Node3D" parent="."]
+
+[node name="wall-half2" parent="Model" instance=ExtResource("1_686a0")]
+
+[node name="StaticBody3D" type="StaticBody3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5, 0)
+collision_layer = 4
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D"]
+shape = SubResource("BoxShape3D_r3em5")

@@ -1,0 +1,10 @@
+[gd_scene load_steps=3 format=3 uid="uid://or8yv44rh7hl"]
+
+[ext_resource type="Script" uid="uid://buroa6v12hhac" path="res://src/game/scripts/game/main.gd" id="1_4rfip"]
+[ext_resource type="Script" uid="uid://b44ibnppqdwb3" path="res://src/core/scenes/main/scene_root.gd" id="2_45uaa"]
+
+[node name="Main" type="Node"]
+script = ExtResource("1_4rfip")
+
+[node name="SceneRoot" type="Node" parent="."]
+script = ExtResource("2_45uaa")

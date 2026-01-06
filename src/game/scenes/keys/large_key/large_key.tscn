@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=3 uid="uid://ioa5n2v3ios3"]
+
+[ext_resource type="PackedScene" uid="uid://cg02qksvk40lp" path="res://assets/vendor/models/kenneys_platformer-kit/key.glb" id="1_e0frs"]
+
+[node name="key2" instance=ExtResource("1_e0frs")]
+transform = Transform3D(1.5, 0, 0, 0, 1.5, 0, 0, 0, 1.5, 0, 0, 0)

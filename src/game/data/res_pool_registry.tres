@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="PoolRegistry" load_steps=5 format=3 uid="uid://brsjs0v2kdadc"]
+
+[ext_resource type="Script" uid="uid://dau1d7uhak23k" path="res://src/core/data/pool_def.gd" id="1_83kys"]
+[ext_resource type="Script" uid="uid://c1o3rrnkivf0l" path="res://src/core/data/pool_registry.gd" id="2_a5e4i"]
+[ext_resource type="Resource" uid="uid://cor0ktn0i3652" path="res://src/game/data/pools/res_projectile_pool.tres" id="2_gfp7i"]
+[ext_resource type="Resource" uid="uid://6qbxwtn7ok3e" path="res://src/game/data/pools/mob_pool_res.tres" id="3_gfp7i"]
+
+[resource]
+script = ExtResource("2_a5e4i")
+_pool_registry = Array[ExtResource("1_83kys")]([ExtResource("2_gfp7i"), ExtResource("3_gfp7i")])
+metadata/_custom_type_script = "uid://c1o3rrnkivf0l"
