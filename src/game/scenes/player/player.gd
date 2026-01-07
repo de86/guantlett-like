@@ -7,6 +7,11 @@ class_name Player extends CharacterBody3D
 @export var _aim_deadzone:float = 0.2
 @export var _equipped_spell_def:ProjectileDef
 @export var _damage_cooldown_in_seconds:int = 1
+@export var _audio_set:AudioSet
+#endregion
+
+#region Debug Vars
+@export var _debug_god_mode:bool = false
 #endregion
 
 #region Onready Vars
@@ -52,12 +57,15 @@ func _take_damage ():
 	if !_can_take_damage:
 		return
 	
-	_health_pool.decrease()
-	EventBus.player_health_changed.emit(_health_pool.get_value())
-	_can_take_damage = false
-	if _health_pool.is_empty():
-		EventBus.player_died.emit()
+	if !_debug_god_mode:
+		_health_pool.decrease()
+		EventBus.player_health_changed.emit(_health_pool.get_value())
+		if _health_pool.is_empty():
+			EventBus.player_died.emit()
 	
+	_audio_set.play_2d("take_damage")
+	
+	_can_take_damage = false
 	await get_tree().create_timer(_damage_cooldown_in_seconds).timeout
 	_can_take_damage = true
 
@@ -131,4 +139,5 @@ func _fire_spell():
 	projectile.global_transform = _projectile_spawn_point.global_transform
 	projectile.init(_equipped_spell_def)
 	projectile.on_spawn()
+	_audio_set.play_2d("fire_spell")
 #endregion

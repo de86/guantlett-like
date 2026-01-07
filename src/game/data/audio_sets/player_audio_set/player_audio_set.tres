@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="AudioSet" load_steps=5 format=3 uid="uid://bufuka8en7yep"]
+
+[ext_resource type="Script" uid="uid://csm2gffnvwn4o" path="res://src/core/data/audio_set.gd" id="1_5wmjy"]
+[ext_resource type="Script" uid="uid://cc57f3tfxqoej" path="res://src/core/data/audio_entry.gd" id="2_2f6ia"]
+[ext_resource type="Resource" uid="uid://cydp0mev0bjy0" path="res://src/game/data/audio_sets/player_audio_set/fire_spell.tres" id="3_2f6ia"]
+[ext_resource type="Resource" uid="uid://dx6tg1o06xlaw" path="res://src/game/data/audio_sets/player_audio_set/player_take_damage.tres" id="4_s4vyb"]
+
+[resource]
+script = ExtResource("1_5wmjy")
+sounds = Array[ExtResource("2_2f6ia")]([ExtResource("3_2f6ia"), ExtResource("4_s4vyb")])
+metadata/_custom_type_script = "uid://csm2gffnvwn4o"

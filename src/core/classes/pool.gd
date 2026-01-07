@@ -148,18 +148,18 @@ func _return_to_pool(instance: Node) -> void:
 		_active_pool_items.erase(instance)
 		
 	Utils.disable_all_collision(instance)
-		
+	
 	instance.visible = false
 	
 	if instance.has_method("set_global_position"):
 		instance.set_global_position(global_position) 
 	
-	instance.reparent(self)
-	
 	_available_pool_items.append(instance)
 	
 	if _disable_processing_when_inactive:
-		instance.process_mode = Node.PROCESS_MODE_DISABLED
+		instance.call_deferred("set", "process_mode", Node.PROCESS_MODE_DISABLED)
+	
+	instance.call_deferred("reparent", self)
 
 
 ## Creates a new pool object instance from the configured scene.

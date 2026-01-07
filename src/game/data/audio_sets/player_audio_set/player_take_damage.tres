@@ -1,0 +1,14 @@
+[gd_resource type="Resource" script_class="AudioEntry" load_steps=6 format=3 uid="uid://dx6tg1o06xlaw"]
+
+[ext_resource type="Script" uid="uid://cc57f3tfxqoej" path="res://src/core/data/audio_entry.gd" id="2_gjdkh"]
+[ext_resource type="AudioStream" uid="uid://blakv7wjiq53n" path="res://assets/sfx/human_male_short_fight_vocalisation_007_22294.wav" id="2_gjp1f"]
+[ext_resource type="AudioStream" uid="uid://dlbdxabfx1kpq" path="res://assets/sfx/human_male_short_fight_vocalisation_008_22295.wav" id="3_c4gqx"]
+[ext_resource type="AudioStream" uid="uid://qc2ryqfqmfiv" path="res://assets/sfx/human_male_short_fight_vocalisation_009_22296.wav" id="4_ygwts"]
+[ext_resource type="AudioStream" uid="uid://cx47c0u6g1syr" path="res://assets/sfx/human_male_short_fight_vocalisation_010_22297.wav" id="5_qvwmb"]
+
+[resource]
+script = ExtResource("2_gjdkh")
+key = "take_damage"
+streams = Array[AudioStream]([ExtResource("2_gjp1f"), ExtResource("3_c4gqx"), ExtResource("4_ygwts"), ExtResource("5_qvwmb")])
+pitch_range = Vector2(0.9, 1.1)
+metadata/_custom_type_script = "uid://cc57f3tfxqoej"

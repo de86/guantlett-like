@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="AudioEntry" load_steps=3 format=3 uid="uid://cydp0mev0bjy0"]
+
+[ext_resource type="Script" uid="uid://cc57f3tfxqoej" path="res://src/core/data/audio_entry.gd" id="1_d4fny"]
+[ext_resource type="AudioStream" uid="uid://bwxvvhba5biw5" path="res://assets/sfx/fireball_whoosh.wav" id="2_g1g73"]
+
+[resource]
+script = ExtResource("1_d4fny")
+key = "fire_spell"
+streams = Array[AudioStream]([ExtResource("2_g1g73")])
+pitch_range = Vector2(0.6, 1.4)
+metadata/_custom_type_script = "uid://cc57f3tfxqoej"
