@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="AudioEntry" load_steps=3 format=3 uid="uid://ckqkj66s3lxd"]
+
+[ext_resource type="Script" uid="uid://cc57f3tfxqoej" path="res://src/core/data/audio_entry.gd" id="1_qynx3"]
+[ext_resource type="AudioStream" uid="uid://c6jd4b76agwf2" path="res://assets/sfx/glissando_win_complete_success_soft_dreamy_96111.wav" id="2_homg6"]
+
+[resource]
+script = ExtResource("1_qynx3")
+key = "sfx_pickup"
+streams = Array[AudioStream]([ExtResource("2_homg6")])
+metadata/_custom_type_script = "uid://cc57f3tfxqoej"

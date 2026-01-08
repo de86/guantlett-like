@@ -345,6 +345,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.6492352, 0, -1.2219238)
 script = ExtResource("10_f6gjx")
 _spawn_automatically = true
 _spawn_interval_seconds = 1.0
+_spawn_limit = 5
 _pool_def = ExtResource("11_4qlff")
 _simple_mob_resource = ExtResource("12_4qlff")
 metadata/_custom_type_script = "uid://4skd1o8dy46k"

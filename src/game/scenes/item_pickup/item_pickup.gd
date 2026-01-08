@@ -3,14 +3,17 @@
 class_name ItemPickup
 extends Node3D
 
+
 @export var _simple_item_registry:SimpleItemRegistryDef
 @export var _item:SimpleItemDef:
 	set(value):
 		_item = value
 		_update_visual()
 
+
 @onready var _visual_root:Node3D = %VisualRoot
 @onready var _area_3d:Area3D = %Area3D
+
 
 var _visual_instance:Node3D
 
@@ -28,12 +31,15 @@ func _on_player_collision (body):
 	if !_item:
 		push_warning("Player collided with Pickup Item but not item data set")
 	
-	if !_item.onPickUpAction:
+	if !_item.on_pickup_action:
 		push_warning("No onPickUpAction set for item %s" %_item.display_name)
 	
-	_item.onPickUpAction.execute(_item)
+	_item.on_pickup_action.execute(_item)
 	# Particle FX
-	# Sound FX
+	
+	if _item.audio_set:
+		_item.audio_set.play_2d("sfx_pickup")
+	
 	queue_free()
 
 

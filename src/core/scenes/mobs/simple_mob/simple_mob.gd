@@ -39,9 +39,6 @@ func set_pool (pool:Pool) -> void:
 func on_spawn () -> void:
 	_is_dead = false
 	
-	# Wait for physics sync BEFORE enabling collision
-	await get_tree().physics_frame
-	
 	Utils.enable_collision_layers(
 		self,
 		[
@@ -58,7 +55,7 @@ func on_spawn () -> void:
 	if !_follow_target:
 		_cache_player()
 	
-	set_deferred("process_mode", Node.PROCESS_MODE_INHERIT)
+	process_mode = Node.PROCESS_MODE_INHERIT
 
 
 func set_resource (simple_mob_resource:SimpleMobDef) -> void:
@@ -108,6 +105,7 @@ func _set_visual (visual_packed_scene:PackedScene) -> void:
 
 
 func _die () -> void:
+	_is_dead = true
 	mob_died.emit(self)
 	
 	_free_self()

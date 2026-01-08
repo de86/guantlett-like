@@ -116,11 +116,9 @@ func _handle_aiming():
 func _get_mouse_aim_direction() -> Vector3:
 	var mouse_pos = get_viewport().get_mouse_position()
 	
-	# Cast ray from camera through mouse position
 	var from = _camera.project_ray_origin(mouse_pos)
 	var direction = _camera.project_ray_normal(mouse_pos)
 	
-	# Intersect with horizontal plane at player's height
 	var plane = Plane(Vector3.UP, global_position.y)
 	var intersection = plane.intersects_ray(from, direction)
 	

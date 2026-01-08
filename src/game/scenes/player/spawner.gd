@@ -63,5 +63,9 @@ func _get(property: StringName) -> Variant:
 func spawn () -> Node:
 	var pool = PoolManager.get_pool(_pool_name)
 	var instance = pool.get_instance() as Node3D
+	
+	if instance.has_method("on_spawn"):
+		instance.on_spawn()
+	
 	return instance
 	

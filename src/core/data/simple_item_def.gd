@@ -5,6 +5,6 @@ extends Resource
 @export var display_name:String
 @export var description:String
 @export var visual:PackedScene
-@export var onPickUpAction:OnItemPickupActionDef
-@export var onPickupVFX:PackedScene
-@export var onPickupSFX:SoundDef
+@export var on_pickup_action:OnItemPickupActionDef
+@export var on_pickup_vfx:PackedScene
+@export var audio_set:AudioSet

@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="AudioSet" load_steps=4 format=3 uid="uid://c3l7y56yebqvj"]
+
+[ext_resource type="Script" uid="uid://csm2gffnvwn4o" path="res://src/core/data/audio_set.gd" id="1_4bl1s"]
+[ext_resource type="Script" uid="uid://cc57f3tfxqoej" path="res://src/core/data/audio_entry.gd" id="2_p38bv"]
+[ext_resource type="Resource" uid="uid://ckqkj66s3lxd" path="res://src/game/data/audio_sets/large_key_audio_set/sfx_large_key_pickup.tres" id="3_p38bv"]
+
+[resource]
+script = ExtResource("1_4bl1s")
+sounds = Array[ExtResource("2_p38bv")]([ExtResource("3_p38bv")])
+metadata/_custom_type_script = "uid://csm2gffnvwn4o"
