@@ -107,6 +107,7 @@ func _set_visual (visual_packed_scene:PackedScene) -> void:
 func _die () -> void:
 	_is_dead = true
 	mob_died.emit(self)
+	EventBus.points_scored.emit(_simple_mob.points)
 	
 	_free_self()
 

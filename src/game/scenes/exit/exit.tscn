@@ -1,77 +1,292 @@
-[gd_scene load_steps=8 format=3 uid="uid://dnymks7kh7nmq"]
+[gd_scene load_steps=13 format=3 uid="uid://dnymks7kh7nmq"]
 
 [ext_resource type="Script" uid="uid://bfafufesu5on8" path="res://src/game/scenes/exit/exit.gd" id="1_8p52y"]
 [ext_resource type="PackedScene" uid="uid://b04a01u01ks1s" path="res://assets/vendor/models/kenney_mini_dungeon/GLB format/stairs.glb" id="1_qx0f4"]
+[ext_resource type="Resource" uid="uid://gb50327eepmr" path="res://src/game/data/audio_sets/door_audio_set/door_audio_set.tres" id="2_3ovjk"]
 [ext_resource type="PackedScene" uid="uid://p4mhnm0wu4rc" path="res://assets/vendor/models/kenney_mini_dungeon/GLB format/dirt.glb" id="2_8p52y"]
 [ext_resource type="PackedScene" uid="uid://cxl8pnwwr40wt" path="res://assets/vendor/models/kenneys_platformer-kit/lock.glb" id="4_ayfnx"]
 [ext_resource type="PackedScene" uid="uid://y515fsbvfxgx" path="res://assets/vendor/models/kenneys_fantasy-town-kit_2_0/planks.glb" id="5_3ovjk"]
 
+[sub_resource type="Animation" id="Animation_3ovjk"]
+length = 0.001
+tracks/0/type = "bezier"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("%TrapDoor/lock2:rotation:x")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(0.47595125, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0)
+}
+tracks/1/type = "bezier"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("%TrapDoor/lock2:rotation:y")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(1.5707964, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0)
+}
+tracks/2/type = "bezier"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("%TrapDoor/lock2:rotation:z")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(2.2532156e-08, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0)
+}
+tracks/3/type = "bezier"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("%TrapDoor/lock2:scale:x")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(1, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0)
+}
+tracks/4/type = "bezier"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("%TrapDoor/lock2:scale:y")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(1, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0)
+}
+tracks/5/type = "bezier"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("%TrapDoor/lock2:scale:z")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(1, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0)
+}
+tracks/6/type = "bezier"
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/path = NodePath("%TrapDoor/planks2:position:x")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/keys = {
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(0, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0)
+}
+tracks/7/type = "bezier"
+tracks/7/imported = false
+tracks/7/enabled = true
+tracks/7/path = NodePath("%TrapDoor/planks2:position:y")
+tracks/7/interp = 1
+tracks/7/loop_wrap = true
+tracks/7/keys = {
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(0, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0)
+}
+tracks/8/type = "bezier"
+tracks/8/imported = false
+tracks/8/enabled = true
+tracks/8/path = NodePath("%TrapDoor/planks2:position:z")
+tracks/8/interp = 1
+tracks/8/loop_wrap = true
+tracks/8/keys = {
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(0, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0)
+}
+
+[sub_resource type="Animation" id="Animation_ayfnx"]
+resource_name = "exit_locked"
+length = 0.80000335
+tracks/0/type = "bezier"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("%TrapDoor/lock2:rotation:y")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"handle_modes": PackedInt32Array(0, 0, 0, 0, 0, 0),
+"points": PackedFloat32Array(1.5707964, -0.25, 0, 0.06666667, -0.17701209, 0.7853982, 0, 0, 0, 0, 2.3561945, 0, 0, 0, 0, 0.7853982, 0, 0, 0, 0, 2.3561945, 0, 0, 0, 0, 1.5707964, -0.06666666, 0.031237721, 0.06666667, -0.17701209),
+"times": PackedFloat32Array(0, 0.13333334, 0.26666668, 0.40000004, 0.53333336, 0.6666667)
+}
+
+[sub_resource type="Animation" id="Animation_xb2l1"]
+resource_name = "exit_open"
+length = 0.50000334
+tracks/0/type = "bezier"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("%TrapDoor/lock2:scale:x")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"handle_modes": PackedInt32Array(0, 0, 1),
+"points": PackedFloat32Array(1, -0.25, 0, 0.1, 0.097346544, 1.3, 0, 0.001337409, 0.067238554, -1.1167696, 0, 0, 0, 0, 0),
+"times": PackedFloat32Array(0, 0.13333334, 0.40000004)
+}
+tracks/1/type = "bezier"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("%TrapDoor/lock2:scale:y")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"handle_modes": PackedInt32Array(0, 0, 1),
+"points": PackedFloat32Array(1, -0.25, 0, 0.1, 0.10359073, 1.3, 0, 0.0040123463, 0.06666666, -1.1140946, 0, 0, 0, 0, 0),
+"times": PackedFloat32Array(0, 0.13333334, 0.40000004)
+}
+tracks/2/type = "bezier"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("%TrapDoor/lock2:scale:z")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"handle_modes": PackedInt32Array(0, 0, 1),
+"points": PackedFloat32Array(1, -0.25, 0, 0.1, 0.09478319, 1.3, 0, -0.0013375282, 0.067238554, -1.1221194, 0, 0, 0, 0, 0),
+"times": PackedFloat32Array(0, 0.13333334, 0.40000004)
+}
+tracks/3/type = "bezier"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("%TrapDoor/planks2:position:z")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"handle_modes": PackedInt32Array(0, 2, 0, 0),
+"points": PackedFloat32Array(0, -0.25, 0, 0.08692709, -0.029330954, -0.40796864, -0.03338126, -0.0031495907, 0.099999994, 0.009435207, 1.4158918, -0.25, 0, 0.014047414, -0.0012307167, 1.06192, -0.04175335, 0.040970087, 0.25, 0),
+"times": PackedFloat32Array(0, 0.13333334, 0.40000004, 0.4666667)
+}
+tracks/4/type = "method"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("..")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"values": [{
+"args": ["unlock_door"],
+"method": &"_play_sfx"
+}]
+}
+tracks/5/type = "method"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("..")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0, 0.46666667),
+"transitions": PackedFloat32Array(1, 1),
+"values": [{
+"args": ["wooden_door_slide"],
+"method": &"_play_sfx"
+}, {
+"args": ["wooden_door_impact"],
+"method": &"_play_sfx"
+}]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_xb2l1"]
+_data = {
+&"RESET": SubResource("Animation_3ovjk"),
+&"exit_locked": SubResource("Animation_ayfnx"),
+&"exit_open": SubResource("Animation_xb2l1")
+}
+
 [sub_resource type="BoxShape3D" id="BoxShape3D_ayfnx"]
 size = Vector3(0.5, 0.5, 0.5)
 
-[sub_resource type="BoxShape3D" id="BoxShape3D_3ovjk"]
-size = Vector3(1.2, 0.5, 1.2)
+[sub_resource type="CylinderShape3D" id="CylinderShape3D_ayfnx"]
+height = 0.9041748
+radius = 0.9550781
 
 [node name="Exit" type="Node3D"]
 script = ExtResource("1_8p52y")
+_audio_set = ExtResource("2_3ovjk")
 
 [node name="Model" type="Node3D" parent="."]
 
-[node name="stairs2" parent="Model" instance=ExtResource("1_qx0f4")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.9059214, -0.2484436)
-
-[node name="stairs3" parent="Model" instance=ExtResource("1_qx0f4")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1.807332, 0.67155874)
-
-[node name="dirt4" parent="Model" instance=ExtResource("2_8p52y")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1, -0.90692145, 0)
-
-[node name="dirt7" parent="Model" instance=ExtResource("2_8p52y")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1, -0.90692145, -1)
-
-[node name="dirt15" parent="Model" instance=ExtResource("2_8p52y")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1, -0.90692145, -1)
-
-[node name="dirt5" parent="Model" instance=ExtResource("2_8p52y")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1, -0.90692145, 1)
-
-[node name="dirt6" parent="Model" instance=ExtResource("2_8p52y")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1, -0.90692145, 2)
-
-[node name="dirt11" parent="Model" instance=ExtResource("2_8p52y")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1.8074245, 1.5161507)
-
-[node name="dirt14" parent="Model" instance=ExtResource("2_8p52y")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.90692145, 1.5162058)
-
-[node name="dirt12" parent="Model" instance=ExtResource("2_8p52y")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1, -1.8074245, 1)
-
-[node name="dirt13" parent="Model" instance=ExtResource("2_8p52y")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1, -1.8074245, 1)
-
-[node name="dirt16" parent="Model" instance=ExtResource("2_8p52y")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1, -1.8074245, 0)
-
-[node name="dirt17" parent="Model" instance=ExtResource("2_8p52y")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1, -1.8074245, 0)
-
-[node name="dirt8" parent="Model" instance=ExtResource("2_8p52y")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1, -0.90692145, 2)
-
-[node name="dirt9" parent="Model" instance=ExtResource("2_8p52y")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1, -0.90692145, 1)
-
-[node name="dirt10" parent="Model" instance=ExtResource("2_8p52y")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1, -0.90692145, 0)
-
 [node name="TrapDoor" type="Node3D" parent="Model"]
 unique_name_in_owner = true
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.051757813, 0, 0)
 
 [node name="lock2" parent="Model/TrapDoor" instance=ExtResource("4_ayfnx")]
-transform = Transform3D(-3.8853184e-08, 0.45818424, 0.88885736, 2.002787e-08, 0.88885736, -0.45818424, -1, 0, -4.371139e-08, -0.32019043, 0.06945801, 0.0047311783)
+transform = Transform3D(-3.338751e-08, 0.45818418, 0.88885725, 2.002787e-08, 0.88885725, -0.45818418, -1, 2.5042883e-09, -3.8853184e-08, -0.32019043, 0.09790039, 0)
 
 [node name="planks2" parent="Model/TrapDoor" instance=ExtResource("5_3ovjk")]
+
+[node name="Terrain" type="Node3D" parent="Model"]
+
+[node name="stairs2" parent="Model/Terrain" instance=ExtResource("1_qx0f4")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.9059214, -0.2484436)
+
+[node name="stairs3" parent="Model/Terrain" instance=ExtResource("1_qx0f4")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1.807332, 0.67155874)
+
+[node name="dirt4" parent="Model/Terrain" instance=ExtResource("2_8p52y")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1, -0.90692145, 0)
+
+[node name="dirt7" parent="Model/Terrain" instance=ExtResource("2_8p52y")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1, -0.90692145, -1)
+
+[node name="dirt15" parent="Model/Terrain" instance=ExtResource("2_8p52y")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1, -0.90692145, -1)
+
+[node name="dirt5" parent="Model/Terrain" instance=ExtResource("2_8p52y")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1, -0.90692145, 1)
+
+[node name="dirt6" parent="Model/Terrain" instance=ExtResource("2_8p52y")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1, -0.90692145, 2)
+
+[node name="dirt11" parent="Model/Terrain" instance=ExtResource("2_8p52y")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1.8074245, 1.5161507)
+
+[node name="dirt14" parent="Model/Terrain" instance=ExtResource("2_8p52y")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.90692145, 1.5162058)
+
+[node name="dirt12" parent="Model/Terrain" instance=ExtResource("2_8p52y")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1, -1.8074245, 1)
+
+[node name="dirt13" parent="Model/Terrain" instance=ExtResource("2_8p52y")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1, -1.8074245, 1)
+
+[node name="dirt16" parent="Model/Terrain" instance=ExtResource("2_8p52y")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1, -1.8074245, 0)
+
+[node name="dirt17" parent="Model/Terrain" instance=ExtResource("2_8p52y")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1, -1.8074245, 0)
+
+[node name="dirt8" parent="Model/Terrain" instance=ExtResource("2_8p52y")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1, -0.90692145, 2)
+
+[node name="dirt9" parent="Model/Terrain" instance=ExtResource("2_8p52y")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1, -0.90692145, 1)
+
+[node name="dirt10" parent="Model/Terrain" instance=ExtResource("2_8p52y")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1, -0.90692145, 0)
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Model"]
+unique_name_in_owner = true
+libraries = {
+&"": SubResource("AnimationLibrary_xb2l1")
+}
 
 [node name="ExitTrigger" type="Area3D" parent="."]
 unique_name_in_owner = true
@@ -87,6 +302,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -0.031707764)
 collision_layer = 32
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="KeyCheckTrigger"]
-shape = SubResource("BoxShape3D_3ovjk")
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.39715576, 0)
+shape = SubResource("CylinderShape3D_ayfnx")
 
 [connection signal="body_entered" from="KeyCheckTrigger" to="." method="_on_exit_trigger_body_entered"]

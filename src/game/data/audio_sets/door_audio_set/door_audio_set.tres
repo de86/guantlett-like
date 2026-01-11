@@ -1,0 +1,14 @@
+[gd_resource type="Resource" script_class="AudioSet" load_steps=8 format=3 uid="uid://gb50327eepmr"]
+
+[ext_resource type="Script" uid="uid://csm2gffnvwn4o" path="res://src/core/data/audio_set.gd" id="1_at46r"]
+[ext_resource type="Script" uid="uid://cc57f3tfxqoej" path="res://src/core/data/audio_entry.gd" id="2_3a5uf"]
+[ext_resource type="Resource" uid="uid://b6hpjcslsjx4v" path="res://src/game/data/audio_sets/door_audio_set/locked_door_rattle.tres" id="3_3a5uf"]
+[ext_resource type="Resource" uid="uid://buitrs31kmbol" path="res://src/game/data/audio_sets/door_audio_set/heavy_door_slam.tres" id="4_gig7t"]
+[ext_resource type="Resource" uid="uid://d037f3bttncqu" path="res://src/game/data/audio_sets/door_audio_set/unlock_door.tres" id="5_yqfct"]
+[ext_resource type="Resource" uid="uid://cw0ymw03sch46" path="res://src/game/data/audio_sets/door_audio_set/wooden_door_slide.tres" id="6_0f6j0"]
+[ext_resource type="Resource" uid="uid://c47mc46rwf7ms" path="res://src/game/data/audio_sets/door_audio_set/wooden_door_impact.tres" id="7_xhile"]
+
+[resource]
+script = ExtResource("1_at46r")
+sounds = Array[ExtResource("2_3a5uf")]([ExtResource("3_3a5uf"), ExtResource("4_gig7t"), ExtResource("5_yqfct"), ExtResource("6_0f6j0"), ExtResource("7_xhile")])
+metadata/_custom_type_script = "uid://csm2gffnvwn4o"

@@ -1,0 +1,133 @@
+[gd_scene load_steps=10 format=3 uid="uid://dactaju3hwbbp"]
+
+[ext_resource type="PackedScene" uid="uid://bcgo8gxk76ywm" path="res://src/game/scenes/door/door_visual.tscn" id="1_5n21t"]
+[ext_resource type="Script" uid="uid://vcdtvyhu6v2" path="res://src/game/scenes/door/door_controller.gd" id="1_ivg3t"]
+[ext_resource type="Resource" uid="uid://gb50327eepmr" path="res://src/game/data/audio_sets/door_audio_set/door_audio_set.tres" id="2_0q4aw"]
+
+[sub_resource type="Animation" id="Animation_0q4aw"]
+length = 0.001
+tracks/0/type = "bezier"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Door:position:x")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(0, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0)
+}
+tracks/1/type = "bezier"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Door:position:y")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(0, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0)
+}
+tracks/2/type = "bezier"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Door:position:z")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(0, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0)
+}
+
+[sub_resource type="Animation" id="Animation_xkwur"]
+resource_name = "door_locked"
+length = 0.5
+tracks/0/type = "bezier"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Door:position:y")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"handle_modes": PackedInt32Array(0, 0, 0),
+"points": PackedFloat32Array(0, -0.25, 0, 0.052041877, 0.016742233, 0.2977295, -0.033416584, -0.13978763, 0, 0, 0, -0.011111113, 0.023040773, 0, 0),
+"times": PackedFloat32Array(0, 0.16666667, 0.23333335)
+}
+
+[sub_resource type="Animation" id="Animation_ivg3t"]
+resource_name = "door_open"
+length = 0.5
+tracks/0/type = "bezier"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Door:position:y")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"handle_modes": PackedInt32Array(0, 2, 0, 0),
+"points": PackedFloat32Array(0, 0, 0, 0.13333334, -0.011363365, 0.53204334, -0.02777778, 0.06848936, 0.022222225, -0.054791488, -0.73968506, 0, 0, 0, 0, -0.69732666, 0, 0, 0, 0),
+"times": PackedFloat32Array(0, 0.16666667, 0.3, 0.5)
+}
+tracks/1/type = "method"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("..")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.3),
+"transitions": PackedFloat32Array(1, 1),
+"values": [{
+"args": ["unlock_door"],
+"method": &"_play_sfx"
+}, {
+"args": ["door_slam"],
+"method": &"_play_sfx"
+}]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_xkwur"]
+_data = {
+&"RESET": SubResource("Animation_0q4aw"),
+&"door_locked": SubResource("Animation_xkwur"),
+&"door_open": SubResource("Animation_ivg3t")
+}
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_ivg3t"]
+size = Vector3(0.8005371, 0.7519531, 0.20336914)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_0q4aw"]
+size = Vector3(0.8022461, 0.5644531, 0.26470947)
+
+[node name="Door" type="Node3D"]
+script = ExtResource("1_ivg3t")
+_audio_set = ExtResource("2_0q4aw")
+
+[node name="Visual" type="Node3D" parent="."]
+
+[node name="Door" parent="Visual" instance=ExtResource("1_5n21t")]
+transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, 0, 0, 0)
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Visual"]
+unique_name_in_owner = true
+libraries = {
+&"": SubResource("AnimationLibrary_xkwur")
+}
+
+[node name="StaticBody3D" type="StaticBody3D" parent="."]
+unique_name_in_owner = true
+collision_layer = 32
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D"]
+unique_name_in_owner = true
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.00061035156, 0.375, 0.00061035156)
+shape = SubResource("BoxShape3D_ivg3t")
+
+[node name="LockCheckTrigger" type="Area3D" parent="."]
+unique_name_in_owner = true
+
+[node name="LockCheckCollisionShape3D" type="CollisionShape3D" parent="LockCheckTrigger"]
+unique_name_in_owner = true
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0017089844, 0.28430176, 0.0042419434)
+shape = SubResource("BoxShape3D_0q4aw")

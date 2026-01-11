@@ -18,3 +18,5 @@ signal player_collected_item(item:SimpleItemDef)
 signal player_used_key
 signal player_health_changed(new_value:int)
 signal player_died()
+signal points_scored(points:int)
+signal player_score_changed(score:int)

@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="AudioEntry" load_steps=3 format=3 uid="uid://buitrs31kmbol"]
+
+[ext_resource type="Script" uid="uid://cc57f3tfxqoej" path="res://src/core/data/audio_entry.gd" id="1_7mof1"]
+[ext_resource type="AudioStream" uid="uid://dpwv1e6do2kw1" path="res://assets/sfx/heavy_slam.wav" id="2_hyia0"]
+
+[resource]
+script = ExtResource("1_7mof1")
+key = "door_slam"
+streams = Array[AudioStream]([ExtResource("2_hyia0")])
+pitch_range = Vector2(0.8, 0.8)
+metadata/_custom_type_script = "uid://cc57f3tfxqoej"

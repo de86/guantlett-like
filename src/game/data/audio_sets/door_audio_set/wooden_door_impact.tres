@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="AudioEntry" load_steps=3 format=3 uid="uid://c47mc46rwf7ms"]
+
+[ext_resource type="Script" uid="uid://cc57f3tfxqoej" path="res://src/core/data/audio_entry.gd" id="1_3hy7f"]
+[ext_resource type="AudioStream" uid="uid://ddk4yxa51lop5" path="res://assets/sfx/wooden_door_close.wav" id="2_rjh7x"]
+
+[resource]
+script = ExtResource("1_3hy7f")
+key = "wooden_door_impact"
+streams = Array[AudioStream]([ExtResource("2_rjh7x")])
+pitch_range = Vector2(0.8, 0.8)
+metadata/_custom_type_script = "uid://cc57f3tfxqoej"

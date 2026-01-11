@@ -4,3 +4,5 @@
 
 [node name="TimedSpawner" type="Node3D"]
 script = ExtResource("1_f1t0g")
+
+[node name="Visual" type="Node3D" parent="."]

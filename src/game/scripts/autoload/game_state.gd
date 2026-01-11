@@ -5,11 +5,13 @@ extends Node
 
 
 var _player_has_exit_key:bool = false
+var _player_score:int = 0
 
 
 func _init ():
 	EventBus.player_collected_item.connect(_on_player_collected_item)
 	EventBus.player_used_key.connect(_on_player_used_key)
+	EventBus.points_scored.connect(_on_points_scored)
 
 
 func _on_player_collected_item (item:SimpleItemDef):
@@ -29,3 +31,8 @@ func _on_player_used_key ():
 
 func player_has_key () -> bool:
 	return _player_key_qty.greater_than(0)
+
+
+func _on_points_scored (points:int) -> void:
+	_player_score += points
+	EventBus.player_score_changed.emit(_player_score)

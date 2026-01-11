@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="AudioEntry" load_steps=3 format=3 uid="uid://cw0ymw03sch46"]
+
+[ext_resource type="Script" uid="uid://cc57f3tfxqoej" path="res://src/core/data/audio_entry.gd" id="1_8q02h"]
+[ext_resource type="AudioStream" uid="uid://gmefp48odjl5" path="res://assets/sfx/sliding_wooden_door.wav" id="2_h1uai"]
+
+[resource]
+script = ExtResource("1_8q02h")
+key = "wooden_door_slide"
+streams = Array[AudioStream]([ExtResource("2_h1uai")])
+pitch_range = Vector2(0.8, 0.8)
+metadata/_custom_type_script = "uid://cc57f3tfxqoej"

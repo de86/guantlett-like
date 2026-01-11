@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="AudioEntry" load_steps=3 format=3 uid="uid://d037f3bttncqu"]
+
+[ext_resource type="Script" uid="uid://cc57f3tfxqoej" path="res://src/core/data/audio_entry.gd" id="1_m1bts"]
+[ext_resource type="AudioStream" uid="uid://c7x2cqpghm745" path="res://assets/sfx/door_unlock.wav" id="2_st3mj"]
+
+[resource]
+script = ExtResource("1_m1bts")
+key = "unlock_door"
+streams = Array[AudioStream]([ExtResource("2_st3mj")])
+pitch_range = Vector2(0.8, 1.2)
+metadata/_custom_type_script = "uid://cc57f3tfxqoej"

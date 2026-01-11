@@ -1,7 +1,7 @@
 [gd_resource type="Resource" script_class="AudioEntry" load_steps=3 format=3 uid="uid://ncj3dg7cnydr"]
 
 [ext_resource type="Script" uid="uid://cc57f3tfxqoej" path="res://src/core/data/audio_entry.gd" id="1_62c0a"]
-[ext_resource type="AudioStream" uid="uid://btqnwv74j4b1j" path="res://assets/sfx/harp_glissando_ascending_fast_109430.wav" id="2_qv82r"]
+[ext_resource type="AudioStream" uid="uid://cwruuicw6ysbx" path="res://assets/sfx/collect_item_star_pick_up_001_108903.wav" id="2_qv82r"]
 
 [resource]
 script = ExtResource("1_62c0a")

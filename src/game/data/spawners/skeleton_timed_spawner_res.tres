@@ -1,0 +1,14 @@
+[gd_resource type="Resource" script_class="TimedSpawnerDef" load_steps=4 format=3 uid="uid://bmm32n8ole3kj"]
+
+[ext_resource type="Script" uid="uid://dov5e46hli0ra" path="res://src/core/data/timed_spawner_def.gd" id="1_54ad7"]
+[ext_resource type="Resource" uid="uid://6qbxwtn7ok3e" path="res://src/game/data/pools/mob_pool_res.tres" id="1_rn11d"]
+[ext_resource type="Resource" uid="uid://bxdvn68gyceip" path="res://src/game/scenes/characters/skeleton/skeleton_simple_mob_res.tres" id="3_46evi"]
+
+[resource]
+script = ExtResource("1_54ad7")
+spawn_resource = ExtResource("3_46evi")
+spawn_automatically = true
+spawn_interval_seconds = 1.0
+spawn_limit = 10
+pool_def = ExtResource("1_rn11d")
+metadata/_custom_type_script = "uid://dov5e46hli0ra"
